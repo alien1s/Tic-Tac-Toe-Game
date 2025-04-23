@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Tic] [Tac] [Toe]</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Styles/styles.css" />
     <script src="" defer></script>
 </head>
 <body>
@@ -24,8 +30,8 @@
                         <input type="text" name="playername" id="user-enterd-name">
                     </div>   
                     <div>
-                        <button type="submit">Confirm</button>
-                        <button type="button">Cancel</button>
+                        <button type="submit" class="btn">Confirm</button>
+                        <button type="button" class="btn btn-alt">Cancel</button>
                     </div>
                 </form>
             </div>
@@ -38,7 +44,7 @@
                         <h2 id="player-number-indecator">Player 1</h2>
                         <h3 id="player-name-place">PLAYER NAME</h3>
                         <P>X</P>
-                        <button id="user-enteries-button">Edit</a>
+                        <button id="user-enteries-button" class="btn btn-alt">Edit</a>
                     </article>
                 </li>
                 <li id="player-2-card">
@@ -46,13 +52,13 @@
                         <h2 id="player-number-indecator">Player 2</h2>
                         <h3 id="player-name-place">PLAYER NAME</h3>
                         <P>O</P>
-                        <button id="user-enteries-button">Edit</button>
+                        <button id="user-enteries-button" class="btn btn-alt">Edit</button>
                     </article>
                 </li>
             </ol>
 
             <div>
-                <button id="game-genrate-buuton">Start New Game</button>
+                <button id="game-genrate-buuton" class="btn">Start New Game</button>
             </div>
 
         </section>

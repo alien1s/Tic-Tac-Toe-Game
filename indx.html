@@ -1,1 +1,137 @@
-GFHGHFGHHGH
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Tic] [Tac] [Toe]</title>
+    <script src="" defer></script>
+</head>
+<body>
+    <header id="main-header">
+        <h1>Play Tic, Tac, Toe</h1>
+        <div>
+            <p>Built with HTML, CSS, JavaScript</p>
+        </div>
+    </header>
+
+    <main>
+        <aside>
+            <div id="overlay-input-name-form">
+                <h2>Choose Your Name</h2>
+                <form>
+                    <div>
+                        <label for="user-enterd-name">Yor Name</label>
+                        <input type="text" name="playername" id="user-enterd-name">
+                    </div>   
+                    <div>
+                        <button type="submit">Confirm</button>
+                        <button type="button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </aside>
+
+        <section id="game-configuration-section">
+            <ol id="card-configuration-container">
+                <li id="player-1-card">
+                    <article>
+                        <h2 id="player-number-indecator">Player 1</h2>
+                        <h3 id="player-name-place">PLAYER NAME</h3>
+                        <P>X</P>
+                        <button id="user-enteries-button">Edit</a>
+                    </article>
+                </li>
+                <li id="player-2-card">
+                    <article>
+                        <h2 id="player-number-indecator">Player 2</h2>
+                        <h3 id="player-name-place">PLAYER NAME</h3>
+                        <P>O</P>
+                        <button id="user-enteries-button">Edit</button>
+                    </article>
+                </li>
+            </ol>
+
+            <div>
+                <button id="game-genrate-buuton">Start New Game</button>
+            </div>
+
+        </section>
+
+        <section id="game-play-ground-section">
+            
+            <article>
+                <h3>You won, <span id="winner-name">PLAYER NAME</span>!</h3>
+                <P>Click <strong>"Start New Game"</strong> above, to start a new game!</P>
+            </article>
+
+            <div id="game-insights">
+                <p id="game-insights-content">It's your turn<span id="active-player-name">PLAYER NAME</span>!</p>
+            </div>
+            
+
+            <ol id="game-board">
+                <li id="box-x1-y1-(1)">
+                    <p id="box-x1-y1(1)-content"></p>
+                </li>
+                <li id="box-x2-y1-(2)">
+                    <p id="box-x2-y1-(2)-content"></p>
+                </li>
+                <li id="box-x3-y1-(3)">
+                    <p id="box-x3-y1-(3)-content"></p>
+                </li>
+                <!--  -->
+                <li id="box-x1-y2-(4)">
+                    <p id="box-x1-y2-(4)-content"></p>
+                </li>
+                <li id="box-x2-y2-(5)">
+                    <p id="box-x2-y2-(5)-content"></p>
+                </li>
+                <li id="box-x3-y2-(6)">
+                    <p id="box-x3-y2-(6)-content"></p>
+                </li>
+                <!--  -->
+                <li id="box-x1-y3-(7)">
+                    <p id="box-x1-y3-(7)-content"></p>
+                </li>
+                <li id="box-x2-y3-(8)">
+                    <p id="box-x2-y3-(8)-content"></p>
+                </li>
+                <li id="box-x3-y3-(9)">
+                    <p id="box-x3-y3-(9)-content"></p>
+                </li>
+
+                <!--Matrix
+                            x1     x2     x3
+                      y1  |11(1)  21(2)  31(3)|
+                      y2  |12(4)  22(5)  32(6)|
+                      y3  |13(7)  23(8)  33(9)|-->
+
+                
+            </ol>
+
+        </section>
+
+        <section id="game-data-section">
+            <div>
+                <ul id="game-history">
+
+                </ul>
+
+                <ol id="winners-ranking">
+
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <div id="copyright-section">
+            &copy; Copyright <strong><span>Neizzam</span></strong
+            >. All Rights Reserved
+        </div>
+    </footer>
+    
+</body>
+</html>

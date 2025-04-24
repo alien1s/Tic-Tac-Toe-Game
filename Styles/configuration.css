@@ -19,14 +19,14 @@
 
 #overlay-input-form input{
     font: inherit;
-    border: 1px solid rgb(204, 204, 204);
+    border: 1px solid var(--color-nutral-500);
     width: 15rem;
     padding: 0.35rem;
 }
 
 #game-configuration-section {
     width: 90%;
-    width: 40rem;
+    max-width: 40rem;
     margin: 3rem auto;
     text-align: center;
   }
@@ -42,8 +42,8 @@
     margin: 1rem;
     padding: 1rem;
     width: 50%;
-    background-color: rgb(243, 227, 255);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    background-color: var( --color-nutral-400);
+    box-shadow: var(--box-shadow-100);
   }
 
   #game-configuration-section #player-1-card{
@@ -52,25 +52,34 @@
 
   #game-configuration-section #player-2-card{
     border-radius:  30% 10% 70% 50%;
+    /* border-radius:  50% 70% 10% 30%; */
   }
 
   
   #game-configuration-section h2 {
-    font-size: 1rem;
+    font-size: var(--f-size-1);
     margin: 0.5rem 0;
   }
   
   #game-configuration-section h3 {
-    font-size: 1.5rem;
+    font-size: var(--f-size-2);
     margin: 0.5rem 0;
-    color: rgb(94, 4, 168);
+    color: var(--color-primary-700);
+    text-transform: uppercase;
   }
   
   .player-symbol {
-    font-size: 2rem;
+    font-size: var(--f-size-3);
     font-weight: bold;
-    color: rgb(47, 4, 82);
     margin: 2rem 0 1rem 0;
+  }
+
+  .class-o{
+    color:crimson;
+  }
+
+  .class-x{
+    color:blue;
   }
 
 

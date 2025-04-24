@@ -1,44 +1,113 @@
+html {
+  --color-nutral-100: white ;
+  --color-nutral-300: rgb(247, 239, 247);
+  --color-nutral-400: rgb(243, 227, 255);
+  --color-nutral-500: rgb(204, 204, 204);
+  --color-nutral-700: rgb(58, 58, 58);
+  --color-nutral-900: rgb(44, 41, 44);
+  --color-nutral-0:   rgba(0, 0, 0, 0.2);
+
+  --color-primary-100: rgb(230, 201, 252);
+  --color-primary-300: rgb(140, 0, 255);
+  --color-primary-400: rgb(112, 13, 204);
+  --color-primary-500: rgb(79, 10, 190);
+  --color-primary-700: rgb(94, 4, 168);
+  --color-primary-900: rgb(47, 4, 82);
+  --color-primary-0: rgba(140, 0, 255, 0.2);
+
+  --color-secondry-900: rgb(215, 218, 32);
+
+  --box-shadow-100: 0 1px 4px rgba(0, 0, 0, 0.2);
+  --box-shadow-900: 0 2px 8px rgba(140, 0, 255, 0.2);
+
+  --f-size-1: 1rem;
+  --f-size-2: 1.5rem;
+  --f-size-3: 2.5rem;
+  --f-size-4: 3rem;
+}
+
+
 body {
   margin: 0;
+  background-color: var(--color-gray-300);
   font-family: 'Open-Sans', sans-serif;
-  color: rgb(44, 41, 44);
-  background-color: rgb(247, 239, 247);
+  color: var(--color-nutral-900);
 }
 
 #main-header {
-  background-color: rgb(140, 0, 255);
-  color: white;
+  background-color: var(--color-primary-300);
+  color: var(--color-nutral-100);
   padding: 2rem 5%;
   text-align: center;
 }
 
+#header-head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-head svg{
+  background-color: var(--color-secondry-900);
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
 #main-header p{
-  color:rgb(215, 218, 32)
+  color: var(--color-secondry-900);
+  font-weight: bold;
 }
 
 .btn {
     font: inherit;
+    font-weight: bold;
     margin: 1rem;
     padding: 0.5rem 1.5rem;
-    background-color: rgb(140, 0, 255);
-    border: 1px solid rgb(140, 0, 255);
-    color: white;
+    background-color: var(--color-primary-300);
+    border: 1px solid var(--color-primary-700);
+    color: var(--color-nutral-100);
     border-radius: 4px;
     cursor: pointer;
   }
   
   .btn-alt {
     background-color: transparent;
-    border-color: transparent;
-    color: rgb(140, 0, 255);
+    color: var(--color-secondry-900);
+    
   }
   
   .btn:hover {
-    background-color: rgb(79, 10, 190);
-    border-color: rgb(79, 10, 190);
+    background-color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+    color: var(--color-secondry-900);
   }
   
   .btn-alt:hover {
-    background-color: rgb(230, 201, 252);
+    background-color: var(--color-primary-100);
     border-color: transparent;
+  }
+
+
+  #game-data-section{
+    margin: 5rem;
+    padding: 2.5rem;
+    border-top: 2px solid var(--color-nutral-500);
+    
+  }
+
+  #game-data-section h2{
+    text-align: center;
+    font-size: var(--f-size-2);
+    font-weight: bold;
+    color: var(--color-primary-900);
+  }
+
+  #copyright-section {
+    text-align: center;
+    margin: auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: var(--color-secondry-900);
+    background-color: var(--color-primary-400);
   }

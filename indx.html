@@ -10,9 +10,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="Styles/styles.css" />
+    <link rel="stylesheet" href="Styles/overlays.css" />
+    <link rel="stylesheet" href="Styles/configuration.css" />
     <script src="" defer></script>
 </head>
 <body>
+    <div id="backdrop"></div>
     <header id="main-header">
         <h1>Play Tic, Tac, Toe</h1>
         <div>
@@ -21,29 +24,27 @@
     </header>
 
     <main>
-        <aside>
-            <div id="overlay-input-name-form">
-                <h2>Choose Your Name</h2>
-                <form>
-                    <div>
-                        <label for="user-enterd-name">Yor Name</label>
-                        <input type="text" name="playername" id="user-enterd-name">
-                    </div>   
-                    <div>
-                        <button type="submit" class="btn">Confirm</button>
-                        <button type="button" class="btn btn-alt">Cancel</button>
-                    </div>
-                </form>
-            </div>
+        <aside id="config-overlay" class="modal">
+            <h2>Choose Your Name</h2>
+            <form>
+                <div id="overlay-input-form" >
+                    <label for="user-enterd-name">Yor Name</label>
+                    <input type="text" name="playername" id="user-enterd-name">
+                </div>   
+                <div id="overlay-button-form">
+                    <button type="submit" class="btn">Confirm</button>
+                    <button type="button" class="btn btn-alt">Cancel</button>
+                </div>
+            </form>
         </aside>
-
+        
         <section id="game-configuration-section">
             <ol id="card-configuration-container">
                 <li id="player-1-card">
                     <article>
                         <h2 id="player-number-indecator">Player 1</h2>
                         <h3 id="player-name-place">PLAYER NAME</h3>
-                        <P>X</P>
+                        <P class="player-symbol">X</P>
                         <button id="user-enteries-button" class="btn btn-alt">Edit</a>
                     </article>
                 </li>
@@ -51,7 +52,7 @@
                     <article>
                         <h2 id="player-number-indecator">Player 2</h2>
                         <h3 id="player-name-place">PLAYER NAME</h3>
-                        <P>O</P>
+                        <P class="player-symbol">O</P>
                         <button id="user-enteries-button" class="btn btn-alt">Edit</button>
                     </article>
                 </li>

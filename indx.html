@@ -14,7 +14,10 @@
     <link rel="stylesheet" href="Styles/configuration.css" />
     <link rel="stylesheet" href="Styles/playground.css" />
     <link rel="stylesheet" href="Styles/insights.css" />
-    <script src="" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/app.js" defer></script>
+    <script src="scripts/insights.js" defer></script>
 </head>
 <body>
     <div id="backdrop"></div>
@@ -48,8 +51,8 @@
                     <input type="text" name="playername" id="user-enterd-name">
                 </div>   
                 <div id="overlay-button-form">
-                    <button type="submit" class="btn">Confirm</button>
-                    <button type="button" class="btn btn-alt">Cancel</button>
+                    <button type="submit" class="btn" id="confirm-config-button">Confirm</button>
+                    <button type="button" class="btn btn-alt" id="cancel-config-button">Cancel</button>
                 </div>
             </form>
         </aside>
@@ -66,7 +69,7 @@
                         <h2 id="player-number-indecator">Player 1</h2>
                         <h3 id="player-name-place">PLAYER NAME</h3>
                         <P class="player-symbol class-x">X</P>
-                        <button id="user-enteries-button" class="btn btn-alt">Edit</a>
+                        <button id="player-edit-1-button" class="btn btn-alt">Edit</a>
                     </article>
                 </li>
                 <li id="player-2-card">
@@ -79,7 +82,7 @@
                         <h2 id="player-number-indecator">Player 2</h2>
                         <h3 id="player-name-place">PLAYER NAME</h3>
                         <P class="player-symbol class-o" >O</P>
-                        <button id="user-enteries-button" class="btn btn-alt">Edit</button>
+                        <button id="player-edit-2-button" class="btn btn-alt">Edit</button>
                     </article>
                 </li>
             </ol>

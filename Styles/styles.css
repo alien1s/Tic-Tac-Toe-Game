@@ -20,6 +20,10 @@ html {
   --box-shadow-100: 0 1px 4px rgba(0, 0, 0, 0.2);
   --box-shadow-900: 0 2px 8px rgba(140, 0, 255, 0.2);
 
+  --errors-color-100: rgb(253, 219, 219);
+  --errors-color-900: rgb(136, 2, 2);
+  --errors-color-0: rgba(241, 2, 2, 0.377);
+
   --f-size-1: 1rem;
   --f-size-2: 1.5rem;
   --f-size-3: 2.5rem;

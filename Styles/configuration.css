@@ -11,18 +11,42 @@
     margin: 0.5rem 0;
 }
 
-#overlay-input-form label{
+.overlay-input-form label{
     display: block;
+    color: var(--color-primary-700);
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-#overlay-input-form input{
+.overlay-input-form input{
     font: inherit;
     border: 1px solid var(--color-nutral-500);
+    border-radius: 2rem;
     width: 15rem;
     padding: 0.35rem;
 }
+
+
+.error label{   
+  color: var(--errors-color-900); /* why didn't change when class applied : i get it becuse the higer selecting of id more than class so when i were select the input and lable by id not class when the new class applied it just change the property not existed*/
+}
+
+.error input{
+  border-color: var(--errors-color-900); /* why didn't change when class applied : i get it becuse the higer selecting of id more than class so when i were select the input and lable by id not class when the new class applied it just change the property not existed*/
+  color: var(--errors-color-900);
+  background-color: var(--errors-color-100);
+}
+
+#backdrop.errors {
+  background-color: var(--errors-color-0);
+}
+
+#config-overlay.errors{
+  border: 2px solid var(--errors-color-900);
+}
+
+
 
 #game-configuration-section {
     width: 90%;

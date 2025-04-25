@@ -24,6 +24,9 @@ html {
   --errors-color-900: rgb(136, 2, 2);
   --errors-color-0: rgba(241, 2, 2, 0.377);
 
+  --player-color-1: blue;
+  --player-color-2: crimson;
+
   --f-size-1: 1rem;
   --f-size-2: 1.5rem;
   --f-size-3: 2.5rem;

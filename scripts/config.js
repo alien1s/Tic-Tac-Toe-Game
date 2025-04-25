@@ -1,4 +1,5 @@
-function openPlayerConfig () {
+function openPlayerConfig (event) {
+    editPlayer = +event.target.dataset.playerid; // (+'1' ==> 1 ) / also if the data property notation stored in html with '-' like player-id we can use .dataset['player-id'] 
     playerConfigOverlayElement.style.display = 'block';
     backdropElement.style.display = 'block';
 };
@@ -10,6 +11,7 @@ function closePlayerConfig () {
     playerConfigOverlayElement.classList.remove('errors')
     backdropElement.classList.remove('errors');
     errorsConfigOutputElement.textContent = '';
+    enteredPlayernameInputElement.value = '';
 };
 
 function savePlayerConfig (event) {
@@ -24,8 +26,28 @@ function savePlayerConfig (event) {
 
         errorsConfigOutputElement.textContent = 'Please enter a valid name!';
         errorsConfigOutputElement.style.color = 'var(--errors-color-900)';
-        
+
         return;
     }
 
+    const updatedPlayerNamePlaceElement = document.getElementById('player-' + editPlayer + '-name-place');
+    updatedPlayerNamePlaceElement.textContent = enteredPlayername;
+
+    if (editPlayer === 1) {
+        players[0].name = enteredPlayername;
+        player1CardElement.style.border = '2px solid var(--player-color-1)';
+        player1IconElement.style.fill = 'var(--player-color-1)';
+        player1NamePlaceElement.style.color = 'var(--player-color-1)';
+        player1SymbolElement.style.color = 'var(--player-color-1)';
+    
+    } else {
+        players[1].name = enteredPlayername;
+        player2CardElement.style.border = '2px solid var(--player-color-2)';
+        player2IconElement.style.fill = 'var(--player-color-2)';
+        player2NamePlaceElement.style.color = 'var(--player-color-2)';
+        player2SymbolElement.style.color = 'var(--player-color-2)';
+    }
+
+    // players[editPlayer-1].name = enteredPlayername;
+    closePlayerConfig();
 };

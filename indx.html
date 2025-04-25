@@ -24,9 +24,9 @@
     <div id="backdrop"></div>
     <header id="main-header">
         <div id="header-head">
-            <svg width="40px" height="40px" viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="si-glyph si-glyph-tic-tac-toe">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g transform="translate(1.000000, 0.000000)" fill="#434343">
+            <svg width="3rem" height="3rem" viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="si-glyph si-glyph-tic-tac-toe">
+                <g stroke="var(--color-primary-700)" stroke-width="0.3" fill="none" fill-rule="evenodd">
+                  <g transform="translate(1.000000, 0.000000)" fill="var(--color-primary-900)">
                     <path d="M12.492,9.019 C10.577,9.019 9.023,10.572 9.023,12.489 C9.023,14.405 10.577,15.958 12.492,15.958 C14.409,15.958 15.962,14.405 15.962,12.489 C15.962,10.571 14.409,9.019 12.492,9.019 L12.492,9.019 Z M12.533,15.117 C11.081,15.117 9.904,13.949 9.904,12.508 C9.904,11.068 11.081,9.899 12.533,9.899 C13.986,9.899 15.165,11.068 15.165,12.508 C15.165,13.949 13.986,15.117 12.533,15.117 L12.533,15.117 Z" class="si-glyph-fill"/>
                     <path d="M3.512,0.079 C1.62,0.079 0.086,1.614 0.086,3.506 C0.086,5.4 1.62,6.934 3.512,6.934 C5.405,6.934 6.94,5.4 6.94,3.506 C6.939,1.614 5.404,0.079 3.512,0.079 L3.512,0.079 Z M3.512,6.095 C2.084,6.095 0.925,4.935 0.925,3.506 C0.925,2.079 2.084,0.919 3.512,0.919 C4.94,0.919 6.101,2.079 6.101,3.506 C6.101,4.935 4.939,6.095 3.512,6.095 L3.512,6.095 Z" class="si-glyph-fill"/>
                     <path d="M7.006,9.97 L6.1,9.063 L3.54,11.624 L0.979,9.063 L0.072,9.97 L2.633,12.531 L0.072,15.09 L0.979,15.996 L3.54,13.438 L6.1,15.996 L7.006,15.09 L4.446,12.531 L7.006,9.97 Z" class="si-glyph-fill"/>
@@ -62,29 +62,29 @@
         <section id="game-configuration-section">
             <ol id="card-configuration-container">
                 <li id="player-1-card">
-                    <article>
-                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="7" r="4" stroke="#5e04a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M4 21V17C4 15.8954 4.89543 15 6 15H18C19.1046 15 20 15.8954 20 17V21" stroke="#5e04a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <article id="player-1-data">
+                        <svg width="2rem" height="2rem" viewBox="0 0 24 24" fill="var(--color-primary-700)" xmlns="http://www.w3.org/2000/svg" id="player-1-icon">
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M4 21V17C4 15.8954 4.89543 15 6 15H18C19.1046 15 20 15.8954 20 17V21"  />
                         </svg>
 
-                        <h2 id="player-number-indecator">Player 1</h2>
-                        <h3 id="player-name-place">PLAYER NAME</h3>
-                        <P class="player-symbol class-x">X</P>
-                        <button id="player-edit-1-button" class="btn btn-alt">Edit</a>
+                        <h2>Player 1</h2>
+                        <h3 id="player-1-name-place" class="class-x">PLAYER NAME</h3>
+                        <P id="player-symbol-x" class="player-symbol class-x">X</P>
+                        <button id="player-edit-1-button" class="btn btn-alt" data-playerid ="1">Edit</a>
                     </article>
                 </li>
                 <li id="player-2-card">
-                    <article>
-                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="7" r="4" stroke="#5e04a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M4 21V17C4 15.8954 4.89543 15 6 15H18C19.1046 15 20 15.8954 20 17V21" stroke="#5e04a8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <article id="player-2-data">
+                        <svg width="2rem" height="2rem" viewBox="0 0 24 24" fill="var(--color-primary-700)" xmlns="http://www.w3.org/2000/svg" id="player-2-icon">
+                            <circle cx="12" cy="7" r="4" />
+                            <path d="M4 21V17C4 15.8954 4.89543 15 6 15H18C19.1046 15 20 15.8954 20 17V21"  />
                         </svg>
 
-                        <h2 id="player-number-indecator">Player 2</h2>
-                        <h3 id="player-name-place">PLAYER NAME</h3>
-                        <P class="player-symbol class-o" >O</P>
-                        <button id="player-edit-2-button" class="btn btn-alt">Edit</button>
+                        <h2>Player 2</h2>
+                        <h3 id="player-2-name-place" class="class-o">PLAYER NAME</h3>
+                        <P id="player-symbol-o" class="player-symbol class-o" >O</P>
+                        <button id="player-edit-2-button" class="btn btn-alt" data-playerid ="2">Edit</button>
                     </article>
                 </li>
             </ol>

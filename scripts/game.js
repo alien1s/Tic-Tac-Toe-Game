@@ -51,15 +51,14 @@ function selectGameFieldElement (event) {
     // if (event.target.tagName !== 'LI') {
     //     return;
     // };
+    const selectedFiled = event.target;
     
+    if (selectedFiled.textContent == 'X' ||selectedFiled.textContent == 'O') {
+        return;
+    }; 
 
-    event.target.textContent = players[activePlayer].sympol;
+    selectedFiled.textContent = players[activePlayer].sympol;
     switchPlayer();
     event.target.classList.add(boxStyle);   
-    
-    // if (event.target.textContent !== '') {
-    //     return;
-    // }; 
-    // i need to know how stop changing the selected field
     
 };

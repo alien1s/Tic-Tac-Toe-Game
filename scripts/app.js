@@ -1,3 +1,9 @@
+const gameData = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+];
+
 let editPlayer = 0;
 let boxStyle = 'disabled-x';
 let activePlayer = 0;

@@ -51,13 +51,27 @@ function selectGameFieldElement (event) {
     // if (event.target.tagName !== 'LI') {
     //     return;
     // };
-    const selectedFiled = event.target;
+    const selectedField = event.target;
     
-    if (selectedFiled.textContent == 'X' ||selectedFiled.textContent == 'O') {
+    if (selectedField.textContent == 'X' ||selectedField.textContent == 'O') {
+        alert('Please select an empty field!')
         return;
     }; 
 
-    selectedFiled.textContent = players[activePlayer].sympol;
+    // if (gameData[selectedRowField][selectedColumnField] > 0) {
+    //     alert('Please select an empty field!');
+    //     return;
+    // }; this another way and put the selecte column and row var before this if statment
+
+    selectedField.textContent = players[activePlayer].sympol;
+
+    const selectedColumnField = selectedField.dataset.x - 1;
+    const selectedRowField = selectedField.dataset.y - 1;
+
+    gameData[selectedRowField][selectedColumnField] = activePlayer + 1;
+
+    console.log(gameData);
+
     switchPlayer();
     event.target.classList.add(boxStyle);   
     

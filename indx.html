@@ -9,12 +9,14 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="images/fav-icon/favicon.ico" type="image\x-icon" />
+
     <link rel="stylesheet" href="Styles/styles.css" />
     <link rel="stylesheet" href="Styles/overlays.css" />
     <link rel="stylesheet" href="Styles/configuration.css" />
     <link rel="stylesheet" href="Styles/playground.css" />
-    <link rel="stylesheet" href="Styles/insights.css" />
-    <link rel="icon" href="images/fav-icon/favicon.ico" type="image\x-icon" />
+    <link rel="stylesheet" href="Styles/data.css" />
+    
     <script src="scripts/game.js" defer></script>
     <script src="scripts/config.js" defer></script>
     <script src="scripts/app.js" defer></script>
@@ -58,7 +60,12 @@
                 </div>
             </form>
         </aside>
-        
+
+        <aside id="game-generation-error">
+            <p>Please set custom players names for both players to start the game!</p>
+            <button id="game-generation-error-btn" class="btn btn-alt">OK</button>
+        </aside>
+
         <section id="game-configuration-section">
             <ol id="card-configuration-container">
                 <li id="player-1-card">
@@ -90,10 +97,11 @@
             </ol>
 
             <div>
-                <button id="game-genrate-buuton" class="btn">Start New Game</button>
+                <button id="game-generate-button" class="btn">Start New Game</button>
             </div>
 
         </section>
+
 
         <section id="game-playground-section">
             
@@ -120,20 +128,20 @@
             
 
             <ol id="game-board">
-                <li id="box-x1-y1-(1)" class="disabled-x">x
+                <li id="box-x1-y1-(1)">
                     <p id="box-x1-y1(1)-content"></p>
                 </li>
                 <li id="box-x2-y1-(2)">
                     <p id="box-x2-y1-(2)-content"></p>
                 </li>
-                <li id="box-x3-y1-(3)" class="disabled-o">o
+                <li id="box-x3-y1-(3)">
                     <p id="box-x3-y1-(3)-content"></p>
                 </li>
                 <!--  -->
                 <li id="box-x1-y2-(4)">
                     <p id="box-x1-y2-(4)-content"></p>
                 </li>
-                <li id="box-x2-y2-(5)" class="disabled-x">x
+                <li id="box-x2-y2-(5)">
                     <p id="box-x2-y2-(5)-content"></p>
                 </li>
                 <li id="box-x3-y2-(6)">
@@ -146,7 +154,7 @@
                 <li id="box-x2-y3-(8)">
                     <p id="box-x2-y3-(8)-content"></p>
                 </li>
-                <li id="box-x3-y3-(9)" class="disabled-o">o
+                <li id="box-x3-y3-(9)">
                     <p id="box-x3-y3-(9)-content"></p>
                 </li>
 

@@ -35,12 +35,18 @@ const player2NamePlaceElement = document.getElementById('player-2-name-place');
 const player1SymbolElement = document.getElementById('player-symbol-x');
 const player2SymbolElement = document.getElementById('player-symbol-o');
 
-// ----------
-
 const editPlayer1ButtonElement = document.getElementById('player-edit-1-button');
 const editPlayer2ButtonElement = document.getElementById('player-edit-2-button');
 
 // ----------
+
+
+
+// ----------
+const gameGenerationErrorElement = document.getElementById('game-generation-error');
+const gameGenerationErrorBtnElement = document.getElementById('game-generation-error-btn');
+const gamePlaygroundSectionElement = document.getElementById('game-playground-section');
+const generateNewGameButtonElement = document.getElementById('game-generate-button');
 
 
 
@@ -51,3 +57,6 @@ cancelConfigButtonElement.addEventListener('click', closePlayerConfig);
 backdropElement.addEventListener('click', closePlayerConfig);
 
 formChooseNameElement.addEventListener('submit',savePlayerConfig);
+
+
+generateNewGameButtonElement.addEventListener('click', generateNewGame);

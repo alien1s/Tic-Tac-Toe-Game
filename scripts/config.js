@@ -12,6 +12,7 @@ function closePlayerConfig () {
     backdropElement.classList.remove('errors');
     errorsConfigOutputElement.textContent = '';
     enteredPlayernameInputElement.value = '';
+    gameGenerationErrorElement.style.display = 'none';
 };
 
 function savePlayerConfig (event) {

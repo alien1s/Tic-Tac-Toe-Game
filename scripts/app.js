@@ -1,4 +1,7 @@
 let editPlayer = 0;
+let boxStyle = 'disabled-x';
+let activePlayer = 0;
+
 
 const players = [
     {
@@ -40,15 +43,16 @@ const editPlayer2ButtonElement = document.getElementById('player-edit-2-button')
 
 // ----------
 
-
-
-// ----------
 const gameGenerationErrorElement = document.getElementById('game-generation-error');
 const gameGenerationErrorBtnElement = document.getElementById('game-generation-error-btn');
 const gamePlaygroundSectionElement = document.getElementById('game-playground-section');
 const generateNewGameButtonElement = document.getElementById('game-generate-button');
 
+// ----------
 
+const gameFiledElement = document.querySelectorAll('#game-board li');
+// const gameBoardElement = document.getElementById('game-board');
+const activePlayerNameInsights = document.getElementById('active-player-name');
 
 editPlayer1ButtonElement.addEventListener('click', openPlayerConfig);
 editPlayer2ButtonElement.addEventListener('click', openPlayerConfig);
@@ -58,5 +62,11 @@ backdropElement.addEventListener('click', closePlayerConfig);
 
 formChooseNameElement.addEventListener('submit',savePlayerConfig);
 
-
 generateNewGameButtonElement.addEventListener('click', generateNewGame);
+
+for (const selectedFiledElement of gameFiledElement) {
+    selectedFiledElement.addEventListener('click', selectGameFieldElement);
+};
+// gameBoardElement.addEventListener('click', selectGameFieldElement);
+
+

@@ -18,10 +18,48 @@ function generateNewGame () {
     }
 
     gamePlaygroundSectionElement.style.display ='block';
+    activePlayerNameInsights.textContent = players[activePlayer].name;
+    activePlayerNameInsights.classList.add('disabled-x');
 
+};
+
+
+function switchPlayer() {
+    if (activePlayer === 0) {
+        activePlayerNameInsights.classList.remove('disabled-x');
+        activePlayerNameInsights.classList.add('disabled-o');
+        boxStyle ='disabled-x';
+        activePlayer = 1;
+
+    } else {      
+        activePlayerNameInsights.classList.remove('disabled-o');      
+        activePlayerNameInsights.classList.add('disabled-x');
+        boxStyle ='disabled-o';
+        activePlayer = 0;
+
+    };
+
+    activePlayerNameInsights.textContent = players[activePlayer].name;
+
+}
+
+
+
+
+
+function selectGameFieldElement (event) {
+    // if (event.target.tagName !== 'LI') {
+    //     return;
+    // };
     
 
-
+    event.target.textContent = players[activePlayer].sympol;
+    switchPlayer();
+    event.target.classList.add(boxStyle);   
     
+    // if (event.target.textContent !== '') {
+    //     return;
+    // }; 
+    // i need to know how stop changing the selected field
     
 };

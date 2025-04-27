@@ -1,3 +1,24 @@
+function restGameStatus() {
+    activePlayer = 0;
+    currentRound = 1;
+    gamIsOver = false;
+
+    gameOverFirstElement.innerHTML = 'You won, <span id="winner-name">PLAYER NAME</span>!';
+    gameOverElement.style.display = 'none';
+    activeGameInsightDivElement.style.display = 'block';
+
+    let gameFieldIndex = 0;
+    for (let i=0; i<3; i++) {
+        for (let j=0; j<3; j++) {
+            gameData[i][j] = 0;
+            gameFiledElement[gameFieldIndex].textContent = '';
+            gameFiledElement[gameFieldIndex].classList.remove('disabled-x');
+            gameFiledElement[gameFieldIndex].classList.remove('disabled-o');
+            gameFieldIndex++;
+        };
+    };
+};
+
 function generateNewGame () {
     // if (players[0].name === '' || players[1].name === '') {
     //     alert('Please set custom players names for both players to start the game!');
@@ -17,11 +38,15 @@ function generateNewGame () {
         return;
     };
 
+    restGameStatus();
+
     gamePlaygroundSectionElement.style.display ='block';
     activePlayerNameInsights.textContent = players[activePlayer].name;
     activePlayerNameInsights.classList.add(boxStyle);
 
 };
+
+
 
 function switchPlayer() {
     if (activePlayer === 0) {
@@ -46,6 +71,10 @@ function selectGameFieldElement (event) {
     // if (event.target.tagName !== 'LI') {
     //     return;
     // };
+    if (gamIsOver) {
+        return;
+    };
+
     const selectedField = event.target;
     
     if (selectedField.textContent == 'X' ||selectedField.textContent == 'O') {
@@ -66,7 +95,10 @@ function selectGameFieldElement (event) {
     gameData[selectedRowField][selectedColumnField] = activePlayer + 1;
 
     const winnerId = checkForGameOver();
-    console.log(winnerId);
+
+    if (winnerId !== 0) {
+        endGame(winnerId);
+    };
 
     currentRound++;
 
@@ -83,29 +115,55 @@ function checkForGameOver () {
     // }
 
     for (let i=0; i<3;i++) {
+        // Checking the rows for equality
         if (gameData[i][0]>0 && gameData[i][0] === gameData[i][1] && gameData[i][0] === gameData[i][2]) {
             return gameData[i][0];
         };
 
+        // Checking the columns for equality
         if (gameData[0][i]>0 && gameData[0][i] === gameData[1][i] && gameData[0][i] === gameData[2][i]) {
             return gameData[0][i];
         };  
 
     };
 
+ // Diagonal: Top left to bottom right
     if (gameData[0][0]>0 && gameData[0][0] === gameData[1][1] && gameData[0][0] === gameData[2][2]) {
         return gameData[0][0];
     };
-
-    if (gameData[0][2]>0 && gameData[0][2] === gameData[1][1] && gameData[0][2] === gameData[2][0]) {
-        return gameData[0][2];
+    
+ // Diagonal: Bottom left to top right
+    if (
+        gameData[2][0] > 0 &&
+        gameData[2][0] === gameData[1][1] &&
+        gameData[1][1] === gameData[0][2]
+      ) {
+        return gameData[2][0];
     };
 
+ // Checking for Draw
     if (currentRound === 9) {
         return -1;
     };
 
+ // Game not finished
     return 0;
 
+};
 
+function endGame (winnerIndex) {
+    gamIsOver = true;
+    gameOverElement.style.display = 'block';
+    activeGameInsightDivElement.style.display = 'none';
+
+    if (winnerIndex > 0) {
+        const winnerNameElement = document.getElementById('winner-name');
+        const winnerName = players[winnerIndex - 1].name;
+        winnerNameElement.textContent = winnerName;
+    } else {
+        gameOverFirstElement.textContent = 'It\'s a DRAW (-_-) !';
+        gameOverElement.firstElementChild.style.display = 'none';
+        
+    }
+    
 };

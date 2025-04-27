@@ -15,14 +15,13 @@ function generateNewGame () {
             };
         gameGenerationErrorBtnElement.addEventListener('click',closePlayerError);
         return;
-    }
+    };
 
     gamePlaygroundSectionElement.style.display ='block';
     activePlayerNameInsights.textContent = players[activePlayer].name;
-    activePlayerNameInsights.classList.add('disabled-x');
+    activePlayerNameInsights.classList.add(boxStyle);
 
 };
-
 
 function switchPlayer() {
     if (activePlayer === 0) {
@@ -41,11 +40,7 @@ function switchPlayer() {
 
     activePlayerNameInsights.textContent = players[activePlayer].name;
 
-}
-
-
-
-
+};
 
 function selectGameFieldElement (event) {
     // if (event.target.tagName !== 'LI') {
@@ -70,9 +65,47 @@ function selectGameFieldElement (event) {
 
     gameData[selectedRowField][selectedColumnField] = activePlayer + 1;
 
-    console.log(gameData);
+    const winnerId = checkForGameOver();
+    console.log(winnerId);
+
+    currentRound++;
 
     switchPlayer();
     event.target.classList.add(boxStyle);   
     
+};
+
+function checkForGameOver () {
+    // if (gameData[selectedRowField][selectedRowField] !== [0,0,0][0,0,0]) {
+    //     gameFiledElement.removeEventListener('click', selectGameFieldElement);
+    // } else {
+    //     return;
+    // }
+
+    for (let i=0; i<3;i++) {
+        if (gameData[i][0]>0 && gameData[i][0] === gameData[i][1] && gameData[i][0] === gameData[i][2]) {
+            return gameData[i][0];
+        };
+
+        if (gameData[0][i]>0 && gameData[0][i] === gameData[1][i] && gameData[0][i] === gameData[2][i]) {
+            return gameData[0][i];
+        };  
+
+    };
+
+    if (gameData[0][0]>0 && gameData[0][0] === gameData[1][1] && gameData[0][0] === gameData[2][2]) {
+        return gameData[0][0];
+    };
+
+    if (gameData[0][2]>0 && gameData[0][2] === gameData[1][1] && gameData[0][2] === gameData[2][0]) {
+        return gameData[0][2];
+    };
+
+    if (currentRound === 9) {
+        return -1;
+    };
+
+    return 0;
+
+
 };

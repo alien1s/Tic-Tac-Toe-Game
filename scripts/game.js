@@ -9,7 +9,7 @@ function restGameStatus() {
 
     let gameFieldIndex = 0;
     for (let i=0; i<3; i++) {
-        for (let j=0; j<3; j++) {
+        for (let j=0; j<3; j++) {// this two for loops loops in matrix items
             gameData[i][j] = 0;
             gameFiledElement[gameFieldIndex].textContent = '';
             gameFiledElement[gameFieldIndex].classList.remove('disabled-x');
@@ -33,6 +33,7 @@ function generateNewGame () {
             function closePlayerError() {
                 backdropElement.style.display = 'none';
                 gameGenerationErrorElement.style.display = 'none';
+                backdropElement.addEventListener('click',closePlayerConfig);
             };
         gameGenerationErrorBtnElement.addEventListener('click',closePlayerError);
         return;

@@ -26,6 +26,9 @@ const players = [
 ];
 
 // ----------
+const pickFirstPlayingSideButton = document.getElementById('random-side-pick');
+const playerSideXElement = document.getElementById('player-side-x');
+const playerSideOElement = document.getElementById('player-side-o');
 
 const playerConfigOverlayElement = document.getElementById('config-overlay');
 const backdropElement = document.getElementById('backdrop');
@@ -54,6 +57,7 @@ const editPlayer2ButtonElement = document.getElementById('player-edit-2-button')
 // ----------
 
 const gameGenerationErrorElement = document.getElementById('game-generation-error');
+const gameGenerationErrorParagraphElement = document.querySelector('#game-generation-error p');
 const gameGenerationErrorBtnElement = document.getElementById('game-generation-error-btn');
 const gamePlaygroundSectionElement = document.getElementById('game-playground-section');
 const generateNewGameButtonElement = document.getElementById('game-generate-button');
@@ -71,6 +75,8 @@ const activePlayerNameInsights = document.getElementById('active-player-name');
 const activeGameInsightDivElement = document.getElementById('game-insights');
 
 // ----------
+pickFirstPlayingSideButton.addEventListener('click', pickFirstPlayingSide);
+
 
 editPlayer1ButtonElement.addEventListener('click', openPlayerConfig);
 editPlayer2ButtonElement.addEventListener('click', openPlayerConfig);

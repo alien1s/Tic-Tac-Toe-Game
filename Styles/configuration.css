@@ -47,7 +47,7 @@
 }
 
 #game-configuration-section {
-    width: 90%;
+    width: 80%;
     max-width: 40rem;
     margin: 3rem auto;
     text-align: center;
@@ -58,6 +58,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
   }
   
   #game-configuration-section li {
@@ -108,6 +109,10 @@
 
 
   
-
+  @media (min-width: 48rem) {
+    #game-configuration-section ol {
+      flex-wrap: nowrap;
+    }
+  }
 
 

@@ -59,6 +59,7 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   
   #game-configuration-section li {
@@ -70,11 +71,11 @@
   }
 
   #game-configuration-section #player-1-card{
-    border-radius: 10% 30% 50% 70%;
+    border-radius: 10%;
   }
 
   #game-configuration-section #player-2-card{
-    border-radius:  30% 10% 70% 50%;
+    border-radius: 10%;
     /* border-radius:  50% 70% 10% 30%; */
   }
 
@@ -112,6 +113,15 @@
   @media (min-width: 48rem) {
     #game-configuration-section ol {
       flex-wrap: nowrap;
+    }
+
+    #game-configuration-section #player-1-card{
+      border-radius: 10% 30% 50% 70%;
+    }
+  
+    #game-configuration-section #player-2-card{
+      border-radius:  30% 10% 70% 50%;
+      /* border-radius:  50% 70% 10% 30%; */
     }
   }
 

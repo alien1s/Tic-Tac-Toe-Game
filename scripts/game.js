@@ -1,3 +1,5 @@
+//--------------------
+
 function restGameStatus() {
     activePlayer = 0;
     currentRound = 1;
@@ -18,6 +20,8 @@ function restGameStatus() {
         };
     };
 };
+
+//--------------------
 
 function generateNewGame () {
     // if (players[0].name === '' || players[1].name === '') {
@@ -43,11 +47,16 @@ function generateNewGame () {
 
     gamePlaygroundSectionElement.style.display ='block';
     activePlayerNameInsights.textContent = players[activePlayer].name;
-    activePlayerNameInsights.classList.add(boxStyle);
+    activePlayerNameInsights.classList.add('disabled-x');
+    if (winnerId === 0) {
+        activePlayerNameInsights.classList.add('disabled-o');
+    } else {
+        activePlayerNameInsights.classList.add('disabled-x');
+    };
 
 };
 
-
+//--------------------
 
 function switchPlayer() {
     if (activePlayer === 0) {
@@ -78,7 +87,7 @@ function selectGameFieldElement (event) {
 
     const selectedField = event.target;
     
-    if (selectedField.textContent == 'X' ||selectedField.textContent == 'O') {
+    if (selectedField.textContent == 'X' || selectedField.textContent == 'O') {
         alert('Please select an empty field!')
         return;
     }; 
@@ -92,11 +101,9 @@ function selectGameFieldElement (event) {
 
     const selectedColumnField = selectedField.dataset.x - 1;
     const selectedRowField = selectedField.dataset.y - 1;
-
     gameData[selectedRowField][selectedColumnField] = activePlayer + 1;
 
     const winnerId = checkForGameOver();
-
     if (winnerId !== 0) {
         endGame(winnerId);
     };
@@ -104,9 +111,12 @@ function selectGameFieldElement (event) {
     currentRound++;
 
     switchPlayer();
+
     event.target.classList.add(boxStyle);   
     
 };
+
+//--------------------
 
 function checkForGameOver () {
     // if (gameData[selectedRowField][selectedRowField] !== [0,0,0][0,0,0]) {
@@ -165,6 +175,8 @@ function endGame (winnerIndex) {
         gameOverFirstElement.textContent = 'It\'s a DRAW (-_-) !';
         gameOverElement.firstElementChild.style.display = 'none';
         
-    }
+    };
     
 };
+
+//--------------------

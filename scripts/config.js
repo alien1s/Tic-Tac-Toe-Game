@@ -1,3 +1,5 @@
+//--------------------
+
 function pickingRandomSide () {
     return(Math.floor(Math.random()*2) + 1);
 };
@@ -14,6 +16,8 @@ function pickFirstPlayingSide () {
     };
 
 };
+
+//--------------------
 
 function openPlayerConfig (event) {
     
@@ -87,3 +91,5 @@ function savePlayerConfig (event) {
     // players[editPlayer-1].name = enteredPlayername;
     closePlayerConfig();
 };
+
+//--------------------

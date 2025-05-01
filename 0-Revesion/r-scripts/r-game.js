@@ -51,7 +51,7 @@ function selectGameField (event) {
     const selectedGameField = event.target;
     const selectedColumn = selectedGameField.dataset.col - 1;
     const selectedRow = selectedGameField.dataset.row - 1;
-    if (gameData[selectedRow][selectedColumn]>0) {
+    if (gameData[selectedRow][selectedColumn] > 0) {
         alert('Please select an empty field')
         return;
     }
@@ -77,17 +77,17 @@ function selectGameField (event) {
 function checkForGameOver () {
     for (let i=0; i < 3; i++ ) {
         if (
-            gameData[i][0] > 0 
-            && gameData[i][0] ===  gameData[i][1] 
-            && gameData[i][1] ===  gameData[i][2]
+            gameData[i][0] > 0 && 
+            gameData[i][0] ===  gameData[i][1] && 
+            gameData[i][1] ===  gameData[i][2]
         ) {
             return gameData[i][0];
         }
 
         if (
-            gameData[0][i] > 0 
-            && gameData[0][i] ===  gameData[1][i] 
-            && gameData[1][i] ===  gameData[2][i]
+            gameData[0][i] > 0 && 
+            gameData[0][i] ===  gameData[1][i] && 
+            gameData[1][i] ===  gameData[2][i]
         ) {
             return gameData[0][i];
         }
@@ -110,11 +110,13 @@ function checkForGameOver () {
 }
 
 
-function endGame (winnerIndex) {
+function endGame (winnerId) {
+    
     gameIsOver = true;
     gameOverElement.style.display = 'block';
-    if (winnerIndex > 0) {
-        const winnerName = players[winnerIndex - 1].name;
+    if (winnerId > 0) {
+        const winnerName = players[winnerId - 1].name;
+        const winnerNameElement = document.getElementById('winner-name');
         winnerNameElement.textContent = winnerName;
     } else {
         gameOverElement.firstElementChild.textContent = 'It\'s a Draw';

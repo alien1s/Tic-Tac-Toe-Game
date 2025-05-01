@@ -1,7 +1,7 @@
 const gameData = [
     [0, 0, 0],
     [0, 0, 0],
-    [0, 0, 0]
+    [0, 0, 0],
 ];
 
 let editedPlayer = 0;
@@ -28,7 +28,7 @@ const configErrorsElement = document.getElementById('config-errors');
 const gameAreaElement = document.getElementById('active-game');
 const activePlayerNameElement = document.getElementById('active-player-name');
 const gameOverElement = document.getElementById('game-over');
-const winnerNameElement = document.getElementById('winner-name');
+
 
 const cancelConfigOverlayBtn = document.getElementById('cancel-config-btn');
 const editPlayer1Btn = document.getElementById('edit-player-1-btn');

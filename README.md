@@ -14,8 +14,10 @@ This is my first project using JavaScript: a classic Tic-Tac-Toe game! The game 
 - **JavaScript**: The logic behind the gameplay and interactivity.  
 
 ## Future Enhancements:  
+- Finish server side handling
+- 📊 Track scores across multiple rounds. 
 - 🎯 Add an AI opponent for single-player mode.  
 - 🌟 Improve the design with animations and custom themes.  
-- 📊 Track scores across multiple rounds.  
+ 
 
 Feel free to fork, clone, or suggest improvements! 🚀  

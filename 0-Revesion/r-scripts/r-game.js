@@ -114,7 +114,8 @@ function endGame (winnerIndex) {
     gameIsOver = true;
     gameOverElement.style.display = 'block';
     if (winnerIndex > 0) {
-        gameOverElement.firstElementChild.firstElementChild.textContent = players[winnerIndex - 1].name;
+        const winnerName = players[winnerIndex - 1].name;
+        winnerNameElement.textContent = winnerName;
     } else {
         gameOverElement.firstElementChild.textContent = 'It\'s a Draw';
     }

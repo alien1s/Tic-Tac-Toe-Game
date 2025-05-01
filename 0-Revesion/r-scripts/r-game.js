@@ -4,6 +4,10 @@ function resetGameStatus () {
     gameIsOver = false;
     gameOverElement.firstElementChild.innerHTML = '<h2>You won, <span id="winner-name">PLAYER NAME</span>!</h2>';
     gameOverElement.style.display = 'none';
+    // if (gameIsOver) {
+    //     gameBoardElement.addEventListener('click', selectGameField);
+    // }
+    
 
     let gameBoardIndex = 0;
     for (let i=0; i<3; i++) {
@@ -43,7 +47,7 @@ function switchPlayer () {
 
 
 function selectGameField (event) {
-    if (event.target.tagName !== 'LI') {
+    if (event.target.tagName !== 'LI' || gameIsOver) {
         return;
     };
 
@@ -118,6 +122,10 @@ function endGame (winnerId) {
         const winnerName = players[winnerId - 1].name;
         const winnerNameElement = document.getElementById('winner-name');
         winnerNameElement.textContent = winnerName;
+        // if (gameIsOver) {
+        //     gameBoardElement.removeEventListener('click', selectGameField);
+        // }
+        
     } else {
         gameOverElement.firstElementChild.textContent = 'It\'s a Draw';
     }

@@ -85,14 +85,15 @@ body {
     
     .btn-alt {
       background-color: transparent;
-      color: var(--color-secondry-900);
+      /* border-color: transparent; */
+      color: var(--color-primary-300);
       
     }
     
     .btn:hover {
       background-color: var(--color-primary-500);
       border-color: var(--color-primary-500);
-      color: var(--color-secondry-900);
+      /* color: var(--color-secondry-900); */
     }
     
     .btn-alt:hover {

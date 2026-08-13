@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Game 🎮  
 
-This is my first project using JavaScript: a classic Tic-Tac-Toe game! The game lets two players compete in a simple and intuitive interface, with clear game mechanics and real-time win detection.  
+A classic Tic-Tac-Toe game! The game lets two players compete in a simple and intuitive interface, with clear game mechanics and real-time win detection.  
 
 ## Features:  
 - 🕹️ **Two-player mode**: Play locally with a friend.  
